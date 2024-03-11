@@ -82,13 +82,11 @@ jobs:
         run: |
           tar -czf tiny-world.tar.gz tiny-world
         shell: bash
-      - name: Upload binaries
-        uses: svenstaro/upload-release-action@v2
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: tiny-world.tar.gz
-          asset_name: tiny-world-${{ env.RELEASE_VERSION }}-macos-arm64.tar.gz
-          tag: ${{ github.ref }}
+          name: tiny-world-macos-arm64.tar.gz
+          path: tiny-world.tar.gz
 
   build-macos-amd64:
     name: MacOS amd64 build
@@ -108,10 +106,8 @@ jobs:
         run: |
           tar -czf tiny-world.tar.gz tiny-world
         shell: bash
-      - name: Upload binaries
-        uses: svenstaro/upload-release-action@v2
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: tiny-world.tar.gz
-          asset_name: tiny-world-${{ env.RELEASE_VERSION }}-macos-amd64.tar.gz
-          tag: ${{ github.ref }}
+          name: tiny-world-macos-amd64.tar.gz
+          path: tiny-world.tar.gz
