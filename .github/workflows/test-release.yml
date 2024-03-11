@@ -79,10 +79,10 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y libgl1-mesa-dev xorg-dev
+          sudo apt-get install -y libgl1-mesa-dev xorg-dev gcc-aarch64-linux-gnu
           go get ./...
       - name: Build
-        run: GOOS=darwin GOARCH=arm64 CGO_ENABLED=1 go build .
+        run: GOOS=darwin GOARCH=arm64 CC=aarch64-linux-gnu-gcc CGO_ENABLED=1 go build .
       - name: Compress binaries
         run: |
           tar -czf tiny-world.tar.gz tiny-world
