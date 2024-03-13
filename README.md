@@ -17,7 +17,9 @@ or the development version [here](https://mlange-42.github.io/tiny-world/).
 
 ### Precompiled binaries
 
-You can download precompiled binaries for Linux and Windows from the [Releases](https://github.com/mlange-42/tiny-world/releases).
+You can download precompiled binaries for Linux, Windows and macOS from the [Releases](https://github.com/mlange-42/tiny-world/releases).
+
+For the macOS version, please right-click the app and select "Open" to bypass the security warning, as the binary is not signed.
 
 ### Build from source
 
